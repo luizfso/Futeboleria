@@ -10,11 +10,11 @@ import java.util.List;
 import br.com.futeboleria.jogador.bean.Club;
 import br.com.futeboleria.jogador.factory.ConnectionFactory;
 
-public class CadastraClubDAO {
+public class ClubDAO {
 
 	Connection conn = null;
 	
-	public CadastraClubDAO(){
+	public ClubDAO(){
 		
 		try{
 			conn = ConnectionFactory.getConnection();
@@ -225,4 +225,31 @@ public class CadastraClubDAO {
 		return clubs;
 		
 	}
+	
+	public boolean username(String usernamee, String passworde){
+
+		String sql = "SELECT * FROM tb_club WHERE usernamee = ? and passworde = ?";
+		
+		try{
+			PreparedStatement stmt = conn.prepareStatement(sql);
+			
+			stmt.setString(1, usernamee);
+			stmt.setString(2, passworde);
+					
+			ResultSet rs = stmt.executeQuery();
+			
+			if(rs.next())
+				return true;
+
+		}
+		catch(SQLException ex){ 
+			ex.printStackTrace();
+		}
+		finally{
+			
+		}
+		
+		return false;
+	}
+	
 }

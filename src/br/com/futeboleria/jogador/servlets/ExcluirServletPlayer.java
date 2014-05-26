@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.futeboleria.jogador.bean.Player;
-import br.com.futeboleria.jogador.dao.CadastraPlayerDAO;
+import br.com.futeboleria.jogador.dao.PlayerDAO;
 
 @WebServlet("/excluirPlayers")
 public class ExcluirServletPlayer extends HttpServlet {
@@ -35,7 +35,7 @@ public class ExcluirServletPlayer extends HttpServlet {
 		
 		Integer id = Integer.parseInt(request.getParameter("id"));
 		
-		CadastraPlayerDAO dao = new CadastraPlayerDAO();
+		PlayerDAO dao = new PlayerDAO();
 		
 		dao.delete(id);
 		

@@ -116,7 +116,7 @@
           <div class="hero-unit">
             <h1>Painel do Jogador !</h1>
             <p>Esse e o Painel do jogador, aqui voce acompanha as principais noticias do esporte, gerencia suas mensagens, busca novos clubes, faz contato com jogadores e cria sua rede de networking. Fora tudo isso pode sempre deixar suas informacoes atualizadas. Lembre-se e muito importante para guanhar destaque estar atualizando seu video, suas jogas para que tenha uma melhor visibilidade no portal.</p>
-            <p><a href="alterarPlayer?id=${p.id}" class="btn btn-primary btn-large">Editar minhas Info &raquo;</a></p>
+            <p><a href="alterarPlayer?id=${player.id}" class="btn btn-primary btn-large">Editar minhas Info &raquo;</a></p>
           </div>
           <div class="row-fluid">
             <div class="span4">

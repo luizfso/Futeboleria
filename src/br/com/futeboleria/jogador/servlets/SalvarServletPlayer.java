@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.futeboleria.jogador.bean.Player;
-import br.com.futeboleria.jogador.dao.CadastraPlayerDAO;
+import br.com.futeboleria.jogador.dao.PlayerDAO;
 
 @WebServlet("/salvarCadastroPlayer")
 public class SalvarServletPlayer extends HttpServlet {
@@ -62,8 +62,7 @@ public class SalvarServletPlayer extends HttpServlet {
 			p.setTelefone(telefone);
 			p.setCpf(cpf);
 			
-			
-			CadastraPlayerDAO dao = new CadastraPlayerDAO();
+			PlayerDAO dao = new PlayerDAO();
 			
 			if(id.equals("")){
 				dao.insert(p);
@@ -73,10 +72,12 @@ public class SalvarServletPlayer extends HttpServlet {
 				dao.update(p);
 			}
 			
+			request.setAttribute("player", p);
+			
 			ArrayList<Player> players = (ArrayList<Player>) dao.getAll();
 			request.setAttribute("listaP", players);
 			
-			pagina = "listaPlayers.jsp";
+			pagina = "homePlayer.jsp";
 		}
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(pagina);

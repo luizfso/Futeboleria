@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.futeboleria.jogador.bean.Club;
-import br.com.futeboleria.jogador.dao.CadastraClubDAO;
+import br.com.futeboleria.jogador.dao.ClubDAO;
 
 @WebServlet("/alterarClub")
 public class AlterarServletClub extends HttpServlet {
@@ -33,7 +33,7 @@ public class AlterarServletClub extends HttpServlet {
 		
 		String pagina = "";
 		
-		CadastraClubDAO dao = new CadastraClubDAO();
+		ClubDAO dao = new ClubDAO();
 		
 		Integer ide = Integer.parseInt(request.getParameter("ide"));
 		

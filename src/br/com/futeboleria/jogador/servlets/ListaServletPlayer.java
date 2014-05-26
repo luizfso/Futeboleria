@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.futeboleria.jogador.bean.Player;
-import br.com.futeboleria.jogador.dao.CadastraPlayerDAO;
+import br.com.futeboleria.jogador.dao.PlayerDAO;
 
 @WebServlet("/listarPlayers")
 public class ListaServletPlayer extends HttpServlet {
@@ -43,7 +43,7 @@ public class ListaServletPlayer extends HttpServlet {
 		else{
 			pagina = "listaPlayers.jsp";
 			
-			CadastraPlayerDAO dao = new CadastraPlayerDAO();
+			PlayerDAO dao = new PlayerDAO();
 			
 			ArrayList<Player> players = null;
 			

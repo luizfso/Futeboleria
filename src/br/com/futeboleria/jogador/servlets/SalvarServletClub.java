@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.futeboleria.jogador.bean.Club;
-import br.com.futeboleria.jogador.dao.CadastraClubDAO;
+import br.com.futeboleria.jogador.dao.ClubDAO;
 
 @WebServlet("/salvarCadastroClub")
 public class SalvarServletClub extends HttpServlet {
@@ -62,7 +62,7 @@ public class SalvarServletClub extends HttpServlet {
 			c.setTelefonee(telefonee);
 			c.setCpfe(cpfe);
 			
-			CadastraClubDAO dao = new CadastraClubDAO();
+			ClubDAO dao = new ClubDAO();
 
 			if(ide.equals("")){
 				dao.insert(c);

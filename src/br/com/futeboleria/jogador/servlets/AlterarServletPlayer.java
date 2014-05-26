@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.futeboleria.jogador.bean.Player;
-import br.com.futeboleria.jogador.dao.CadastraPlayerDAO;
+import br.com.futeboleria.jogador.dao.PlayerDAO;
 
 @WebServlet("/alterarPlayer")
 public class AlterarServletPlayer extends HttpServlet {
@@ -33,7 +33,7 @@ public class AlterarServletPlayer extends HttpServlet {
 		
 		String pagina = "";
 		
-		CadastraPlayerDAO dao = new CadastraPlayerDAO();
+		PlayerDAO dao = new PlayerDAO();
 		
 		Integer id = Integer.parseInt(request.getParameter("id"));
 		

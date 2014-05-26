@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.com.futeboleria.jogador.dao.LoginPlayerDAO;
+import br.com.futeboleria.jogador.dao.ClubDAO;
 
 @WebServlet("/loginclub")
 public class LoginServletClub extends HttpServlet {
@@ -34,7 +34,7 @@ public class LoginServletClub extends HttpServlet {
 		String username = request.getParameter("txtLogin");
 		String senha = request.getParameter("txtSenha");
 		
-		LoginPlayerDAO dao = new LoginPlayerDAO();
+		ClubDAO dao = new ClubDAO();
 		Boolean logado = dao.username(username, senha);
 		
 		if(logado)

@@ -116,7 +116,7 @@
         <div class="span9">
           <div class="hero-unit">
             <h1>Editar o Meu Perfil</h1>
-            <form class="form-cadastro " action="alterarPlayer?id=${player.id}" method="post">
+            <form class="form-cadastro " action="salvarCadastroPlayer?id=${player.id}" method="post">
         <h2 class="form-cadastro-heading">Editar Dados Cadastrais Para Jogadores</h2>
         <input type="text" name="txtUsername" class="input-block-level" value="${player.username}" placeholder="Nome de Login">
         <input type="password" name="txtPassword" class="input-block-level" value="${player.password}" placeholder="Password">

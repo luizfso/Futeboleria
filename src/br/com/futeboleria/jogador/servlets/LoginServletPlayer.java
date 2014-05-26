@@ -9,7 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.com.futeboleria.jogador.dao.LoginPlayerDAO;
+import br.com.futeboleria.jogador.bean.Player;
+import br.com.futeboleria.jogador.dao.PlayerDAO;
 
 @WebServlet("/loginplayer")
 public class LoginServletPlayer extends HttpServlet {
@@ -34,8 +35,12 @@ public class LoginServletPlayer extends HttpServlet {
 		String username = request.getParameter("txtLogin");
 		String senha = request.getParameter("txtSenha");
 		
-		LoginPlayerDAO dao = new LoginPlayerDAO();
+		PlayerDAO dao = new PlayerDAO();
 		Boolean logado = dao.username(username, senha);
+		
+		Player p = dao.getByUsername(username);
+		
+		request.setAttribute("player", p);
 		
 		if(logado)
 			pagina = "homePlayer.jsp";

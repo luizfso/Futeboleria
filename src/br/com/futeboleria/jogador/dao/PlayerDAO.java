@@ -10,11 +10,11 @@ import java.util.List;
 import br.com.futeboleria.jogador.bean.Player;
 import br.com.futeboleria.jogador.factory.ConnectionFactory;
 
-public class CadastraPlayerDAO {
+public class PlayerDAO {
 
 	Connection conn = null;
 	
-	public CadastraPlayerDAO(){
+	public PlayerDAO(){
 		
 		try{
 			conn = ConnectionFactory.getConnection();
@@ -59,16 +59,16 @@ public class CadastraPlayerDAO {
 		try{
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			
-			stmt.setString(1, p.getPassword());
-			stmt.setString(2, p.getUsername());
-			stmt.setString(1, p.getNome());
-			stmt.setString(2, p.getEmail());
-			stmt.setString(3, p.getTelefone());
-			stmt.setString(4, p.getEndereco());
-			stmt.setString(5, p.getBairro());
-			stmt.setString(6, p.getCidade());
-			stmt.setString(7, p.getCpf());
-			stmt.setInt(8, p.getId());		
+			stmt.setString(1, p.getUsername());
+			stmt.setString(2, p.getPassword());
+			stmt.setString(3, p.getNome());
+			stmt.setString(4, p.getEmail());
+			stmt.setString(5, p.getTelefone());
+			stmt.setString(6, p.getEndereco());
+			stmt.setString(7, p.getBairro());
+			stmt.setString(8, p.getCidade());
+			stmt.setString(9, p.getCpf());
+			stmt.setInt(10, p.getId());		
 			stmt.executeUpdate();
 
 		}
@@ -225,4 +225,71 @@ public class CadastraPlayerDAO {
 		return players;
 		
 	}
+	
+	public boolean username(String username, String password){
+
+		String sql = "SELECT * FROM tb_player WHERE username = ? and password = ?";
+		
+		try{
+			PreparedStatement stmt = conn.prepareStatement(sql);
+			
+			stmt.setString(1, username);
+			stmt.setString(2, password);
+					
+			ResultSet rs = stmt.executeQuery();
+			
+			if(rs.next())
+				return true;
+
+		}
+		catch(SQLException ex){ 
+			ex.printStackTrace();
+		}
+		finally{
+			
+		}
+		
+		return false;
+	}
+	
+	public Player getByUsername(String username){
+
+		String sql = "SELECT id, username, password, nome, email, telefone, endereco, bairro, cidade, cpf FROM tb_player WHERE username = ?";
+		
+		Player p = null;
+		
+		try{
+			PreparedStatement stmt = conn.prepareStatement(sql);
+			
+			stmt.setString(1, username);
+			
+			ResultSet rs = stmt.executeQuery();
+
+			
+			if(rs.next()){
+				p = new Player();
+				p.setId(rs.getInt("id"));
+				p.setUsername(rs.getString("username"));
+				p.setPassword(rs.getString("password"));
+				p.setNome(rs.getString("nome"));
+				p.setEmail(rs.getString("email"));
+				p.setTelefone(rs.getString("telefone"));
+				p.setEndereco(rs.getString("endereco"));
+				p.setBairro(rs.getString("bairro"));
+				p.setCidade(rs.getString("cidade"));
+				p.setCpf(rs.getString("cpf"));
+			}
+			
+		}
+		catch(SQLException ex){ 
+			ex.printStackTrace();
+		}
+		finally{
+			
+		}
+		
+		return p;
+		
+	}
+	
 }

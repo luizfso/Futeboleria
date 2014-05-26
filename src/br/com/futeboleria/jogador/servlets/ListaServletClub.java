@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.futeboleria.jogador.bean.Club;
-import br.com.futeboleria.jogador.dao.CadastraClubDAO;
+import br.com.futeboleria.jogador.dao.ClubDAO;
 
 @WebServlet("/listarClubs")
 public class ListaServletClub extends HttpServlet {
@@ -43,7 +43,7 @@ public class ListaServletClub extends HttpServlet {
 		else{
 			pagina = "listaClubs.jsp";
 			
-			CadastraClubDAO dao = new CadastraClubDAO();
+			ClubDAO dao = new ClubDAO();
 			
 			ArrayList<Club> clubs = null;
 			
