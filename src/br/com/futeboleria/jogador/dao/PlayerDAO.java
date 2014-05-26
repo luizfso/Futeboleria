@@ -54,7 +54,7 @@ public class PlayerDAO {
 	
 	public void update(Player p){
 		System.out.println("teste1");
-		String sql = "UPDATE tb_player SET username = ? password = ? nome = ?, email = ?, telefone = ?, endereco = ?, bairro = ?, cidade = ?, cpf = ? WHERE id = ?";
+		String sql = "UPDATE tb_player SET username = ?, password = ?, nome = ?, email = ?, telefone = ?, endereco = ?, bairro = ?, cidade = ?, cpf = ? WHERE id = ?";
 		
 		try{
 			PreparedStatement stmt = conn.prepareStatement(sql);
