@@ -98,7 +98,7 @@
               <li><a href="alterarPlayer?id=${player.id}">Meu Perfil</a></li>
               <li><a href="#">Home</a></li>
               <li class="active"><a href="listarClubs?ide=${club.ide}">Listar Clubes</a></li>
-              <li><a href="./procurar.html">Buscar Club</a></li>
+              <li><a href="./procurarClub.jsp">Buscar Club</a></li>
               <li class="nav-header">Principais Noticias</li>
               <li><a href="#">Canal de Suporte</a></li>
               <li><a href="#">Atualizacoes e novidades</a></li>

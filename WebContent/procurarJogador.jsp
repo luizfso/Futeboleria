@@ -115,11 +115,22 @@
         <div class="span9">
           <div class="hero-unit">
             <h1>Procurar Jogador!</h1>
-				<form action="listarPlayers" method="post">
-				<table>
+				<p></p>
+				
+				    <form class="form-search" action="listarPlayers?id=${player.nome}" method="post">
+					    <input type="text" name="txtNome" class="input-medium search-query" placeholder="Nome">
+					    
+					    <button class="btn" type="submit" value="Buscar" name="btnBuscar">Busca</button>
+					    
+				    </form>
+				
+				
+				<form >
+				<!--<table>
 					<tr><td>Nome</td><td><input type="text" name="txtNome" /></td></tr>
 				</table>
-				<input type="submit" value="Voltar" name="btnVoltar">&nbsp;<input type="submit" value="Buscar" name="btnBuscar">
+				-->
+				
 				</form>
             <p>Esse e o Painel do jogador, aqui voce acompanha as principais noticias do esporte, gerencia suas mensagens, busca novos clubes, faz contato com jogadores e cria sua rede de networking. Fora tudo isso pode sempre deixar suas informacoes atualizadas. Lembre-se e muito importante para guanhar destaque estar atualizando seu video, suas jogas para que tenha uma melhor visibilidade no portal.</p>
             <p><a href="alterarPlayer?id=${p.id}" class="btn btn-primary btn-large">Editar minhas Info &raquo;</a></p>

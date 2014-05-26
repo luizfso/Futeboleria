@@ -97,7 +97,7 @@
               <li><a href="alterarPlayer?id=${player.id}">Meu Perfil</a></li>
               <li><a href="#">Home</a></li>
               <li class="active"><a href="listarPlayers?id=${player.id}">Listar Players</a></li>
-              <li><a href="./procurar.html">Buscar Players</a></li>
+              <li><a href="./procurarJogador.jsp">Buscar Players</a></li>
               <li class="nav-header">Principais Noticias</li>
               <li><a href="#">Canal de Suporte</a></li>
               <li><a href="#">Atualizacoes e novidades</a></li>
