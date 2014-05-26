@@ -53,7 +53,7 @@ public class PlayerDAO {
 
 	
 	public void update(Player p){
-
+		System.out.println("teste1");
 		String sql = "UPDATE tb_player SET username = ? password = ? nome = ?, email = ?, telefone = ?, endereco = ?, bairro = ?, cidade = ?, cpf = ? WHERE id = ?";
 		
 		try{
@@ -68,7 +68,8 @@ public class PlayerDAO {
 			stmt.setString(7, p.getBairro());
 			stmt.setString(8, p.getCidade());
 			stmt.setString(9, p.getCpf());
-			stmt.setInt(10, p.getId());		
+			stmt.setInt(10, p.getId());	
+			System.out.println("teste2");
 			stmt.executeUpdate();
 
 		}

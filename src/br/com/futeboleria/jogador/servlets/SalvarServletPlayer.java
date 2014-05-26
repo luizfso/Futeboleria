@@ -66,10 +66,12 @@ public class SalvarServletPlayer extends HttpServlet {
 			
 			if(id.equals("")){
 				dao.insert(p);
+				pagina = "homePlayer.jsp";
 			}
 			else{
 				p.setId(Integer.parseInt(id));
 				dao.update(p);
+				pagina = "alterarPlayer?id=" + id;
 			}
 			
 			request.setAttribute("player", p);
@@ -77,7 +79,6 @@ public class SalvarServletPlayer extends HttpServlet {
 			ArrayList<Player> players = (ArrayList<Player>) dao.getAll();
 			request.setAttribute("listaP", players);
 			
-			pagina = "homePlayer.jsp";
 		}
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(pagina);
