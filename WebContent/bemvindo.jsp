@@ -124,7 +124,7 @@
     		<h3 id="myModalLabel">Quem você é ?</h3>
     	</div>
     	<div class="modal-body">
-    		<p align="center">	<a class="btn btn-large btn-info" href="./Login.jsp">Login como Atleta</a>
+    		<p align="center">	<a class="btn btn-large btn-info" href="./LoginPlayer.jsp">Login como Atleta</a>
     							<a class="btn btn-large btn-primary" href="./LoginClub.jsp">Login como Clube</a></p>
     	</div>
     	<div class="modal-footer">

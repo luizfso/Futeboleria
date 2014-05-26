@@ -96,8 +96,8 @@
                <li class="nav-header">Link Rapido</li>
               <li><a href="alterarPlayer?id=${player.id}">Meu Perfil</a></li>
               <li><a href="#">Home</a></li>
-              <li class="active"><a href="listarPlayers?id=${player.id}">Listar Players</a></li>
-              <li><a href="./procurar.html">Buscar Players</a></li>
+              <li><a href="listarPlayers?id=${player.id}">Listar Players</a></li>
+              <li class="active"><a href="./procurar.html">Buscar Players</a></li>
               <li class="nav-header">Principais Noticias</li>
               <li><a href="#">Canal de Suporte</a></li>
               <li><a href="#">Atualizacoes e novidades</a></li>
@@ -117,7 +117,7 @@
             <h1>Procurar Jogador!</h1>
 				<p></p>
 				
-				    <form class="form-search" action="listarPlayers?id=${player.nome}" method="post">
+				    <form class="form-search" action="listarPlayers?nome=${player.nome}" method="post">
 					    <input type="text" name="txtNome" class="input-medium search-query" placeholder="Nome">
 					    
 					    <button class="btn" type="submit" value="Buscar" name="btnBuscar">Busca</button>

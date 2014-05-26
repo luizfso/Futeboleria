@@ -76,7 +76,7 @@
           <a class="brand" href="./bemvindo.jsp">Projeto Futeboleria</a>
           <div class="nav-collapse collapse">
             <p class="navbar-text pull-right">
-              Logged in as <a href="#" class="navbar-link">${player.username}</a>
+              Logged in as <a href="#" class="navbar-link">${club.username}</a>
             </p>
             <ul class="nav">
               <li class="active"><a href="#">Home</a></li>
@@ -95,9 +95,11 @@
             <ul class="nav nav-list">
                <li class="nav-header">Link Rapido</li>
               <li><a href="alterarPlayer?id=${player.id}">Meu Perfil</a></li>
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="listarPlayers?id=${player.id}">Listar Players</a></li>
-              <li><a href="./procurarJogador.jsp">Buscar Players</a></li>
+              <li><a href="#">Home</a></li>
+          <!--     <li class="active"><a href="listarPlayers?id=${player.id}">Listar Players</a></li>  -->
+          	  <li><a href="listarClubs?ide=${club.ide}">Listar Clubes</a></li>
+          <!--    <li><a href="./procurarJogador.jsp">Buscar Players</a></li>  -->
+          	  <li class="active"><a href="./procurarClub.jsp">Buscar Club</a></li> 
               <li class="nav-header">Principais Noticias</li>
               <li><a href="#">Canal de Suporte</a></li>
               <li><a href="#">Atualizacoes e novidades</a></li>
@@ -114,8 +116,25 @@
         </div><!--/span-->
         <div class="span9">
           <div class="hero-unit">
-            <h1>Painel do Clube !</h1>
-            <p>Esse e o Painel do clube, aqui voce acompanha as principais noticias do esporte, gerencia suas mensagens, busca novos jogadores, faz contato com jogadores e cria sua rede de networking. Fora tudo isso pode sempre deixar suas informacoes atualizadas. Lembre-se e muito importante para guanhar destaque estar atualizando seu video, suas jogas para que tenha uma melhor visibilidade no portal.</p>
+            <h1>Procurar Clube!</h1>
+				<p></p>
+				
+				    <form class="form-search" action="listarClubs?nomee=${club.nome}" method="post">
+					    <input type="text" name="txtNome" class="input-medium search-query" placeholder="Nome">
+					    
+					    <button class="btn" type="submit" value="Buscar" name="btnBuscar">Busca</button>
+					    
+				    </form>
+				
+				
+				<form >
+				<!--<table>
+					<tr><td>Nome</td><td><input type="text" name="txtNome" /></td></tr>
+				</table>
+				-->
+				
+				</form>
+            <p>Esse e o Painel do jogador, aqui voce acompanha as principais noticias do esporte, gerencia suas mensagens, busca novos clubes, faz contato com jogadores e cria sua rede de networking. Fora tudo isso pode sempre deixar suas informacoes atualizadas. Lembre-se e muito importante para guanhar destaque estar atualizando seu video, suas jogas para que tenha uma melhor visibilidade no portal.</p>
             <p><a href="alterarPlayer?id=${p.id}" class="btn btn-primary btn-large">Editar minhas Info &raquo;</a></p>
           </div>
           <div class="row-fluid">

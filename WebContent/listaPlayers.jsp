@@ -97,8 +97,10 @@
               <li class="nav-header">Link Rapido</li>
               <li><a href="alterarPlayer?id=${player.id}">Meu Perfil</a></li>
               <li><a href="#">Home</a></li>
-              <li class="active"><a href="listarClubs?ide=${club.ide}">Listar Clubes</a></li>
-              <li><a href="./procurarClub.jsp">Buscar Club</a></li>
+          <!--     <li class="active"><a href="listarClubs?ide=${club.ide}">Listar Clubes</a></li>  -->
+              <li class="active"><a href="listarPlayers?id=${player.id}">Listar Players</a></li>
+          <!--     <li><a href="./procurarClub.jsp">Buscar Club</a></li>  -->
+              <li><a href="./procurarJogador.jsp">Buscar Players</a></li>
               <li class="nav-header">Principais Noticias</li>
               <li><a href="#">Canal de Suporte</a></li>
               <li><a href="#">Atualizacoes e novidades</a></li>
@@ -137,7 +139,7 @@
 					<td><a href="excluirPlayers?id=${p.id}">Excluir</a></td></tr>
 			</c:forEach>
 		<tr><td colspan="5">&nbsp</td></tr>
-		<tr><td colspan="5"><a href="principal.jsp">Voltar</a></td></tr>
+		<tr><td colspan="5"><a href="homePlayer.jsp">Voltar</a></td></tr>
 		</thead>
 		</tbody>
 	</table>
