@@ -9,8 +9,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import br.com.futeboleria.jogador.bean.Club;
+import br.com.futeboleria.jogador.bean.Player;
 import br.com.futeboleria.jogador.dao.ClubDAO;
 
 @WebServlet("/alterarClub")
@@ -31,15 +33,17 @@ public class AlterarServletClub extends HttpServlet {
 
 	protected void requestHandler(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		HttpSession session = request.getSession();
+		
 		String pagina = "";
 		
 		ClubDAO dao = new ClubDAO();
 		
-		Integer ide = Integer.parseInt(request.getParameter("ide"));
+		Integer ide = ((Club)session.getAttribute("club")).getIde();
 		
 		Club c = dao.getByPK(ide);
 		
-		pagina = "cadastroClub.jsp";
+		pagina = "editaClub.jsp";
 		
 		request.setAttribute("club", c);
 		

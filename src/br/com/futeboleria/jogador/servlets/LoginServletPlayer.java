@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import br.com.futeboleria.jogador.bean.Player;
 import br.com.futeboleria.jogador.dao.PlayerDAO;
@@ -30,6 +31,8 @@ public class LoginServletPlayer extends HttpServlet {
 
 	protected void requestHandler(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		HttpSession session = request.getSession();
+		
 		String pagina = "";
 		
 		String username = request.getParameter("txtLogin");
@@ -41,6 +44,7 @@ public class LoginServletPlayer extends HttpServlet {
 		Player p = dao.getByUsername(username);
 		
 		request.setAttribute("player", p);
+		session.setAttribute("player", p);
 		
 		if(logado)
 			pagina = "homePlayer.jsp";

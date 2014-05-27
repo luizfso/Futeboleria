@@ -95,10 +95,10 @@
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
               <li class="nav-header">Link Rapido</li>
-              <li class="active"><a href="./editaPlayer.jsp">Meu Perfil</a></li>
-              <li><a href="./principal.html">Home</a></li>
+              <li class="active"><a href="#">Meu Perfil</a></li>
+              <li><a href="./homePlayer.jsp">Home</a></li>
               <li><a href="listarClubs?ide=${club.ide}">Listar Clubes</a></li>
-              <li><a href="./procurar.html">Buscar Club</a></li>
+              <li><a href="./procurarClub.html">Buscar Club</a></li>
               <li class="nav-header">Principais Noticias</li>
               <li><a href="#">Canal de Suporte</a></li>
               <li><a href="#">Atualizacoes e novidades</a></li>

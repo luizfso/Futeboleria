@@ -14,10 +14,10 @@ import br.com.futeboleria.jogador.bean.Club;
 import br.com.futeboleria.jogador.dao.ClubDAO;
 
 @WebServlet("/excluirClubs")
-public class ExcluirServletCLub extends HttpServlet {
+public class ExcluirServletClub extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    public ExcluirServletCLub() {
+    public ExcluirServletClub() {
         super();
     }
 

@@ -11,7 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.futeboleria.jogador.bean.Club;
+import br.com.futeboleria.jogador.bean.Player;
 import br.com.futeboleria.jogador.dao.ClubDAO;
+import br.com.futeboleria.jogador.dao.PlayerDAO;
 
 @WebServlet("/salvarCadastroClub")
 public class SalvarServletClub extends HttpServlet {
@@ -63,19 +65,22 @@ public class SalvarServletClub extends HttpServlet {
 			c.setCpfe(cpfe);
 			
 			ClubDAO dao = new ClubDAO();
-
+			
 			if(ide.equals("")){
 				dao.insert(c);
-			}	
+				pagina = "homeClub.jsp";
+			}
 			else{
 				c.setIde(Integer.parseInt(ide));
 				dao.update(c);
+				pagina = "alterarClub?id=" + ide;
 			}
+			
+			request.setAttribute("player", c);
 			
 			ArrayList<Club> clubs = (ArrayList<Club>) dao.getAll();
 			request.setAttribute("listaC", clubs);
 			
-			pagina = "listaClubs.jsp";
 		}
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(pagina);

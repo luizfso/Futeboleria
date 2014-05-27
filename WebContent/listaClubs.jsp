@@ -96,7 +96,7 @@
             <ul class="nav nav-list">
               <li class="nav-header">Link Rapido</li>
               <li><a href="alterarPlayer?id=${player.id}">Meu Perfil</a></li>
-              <li><a href="#">Home</a></li>
+              <li><a href="./homePlayer.jsp">Home</a></li>
           <!--     <li class="active"><a href="listarPlayers?id=${player.id}">Listar Players</a></li>  -->
           	  <li class="active"><a href="listarClubs?ide=${club.ide}">Listar Clubes</a></li>
           <!--    <li><a href="./procurarJogador.jsp">Buscar Players</a></li>  -->

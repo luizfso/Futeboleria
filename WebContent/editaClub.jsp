@@ -77,7 +77,7 @@
           <a class="brand" href="./bemvindo.jsp">Projeto Futeboleria</a>
           <div class="nav-collapse collapse">
             <p class="navbar-text pull-right">
-              Logged in as <a href="#" class="navbar-link">${player.username}</a>
+              Logged in as <a href="#" class="navbar-link">${club.usernamee}</a>
             </p>
             <ul class="nav">
               <li class="active"><a href="#">Home</a></li>
@@ -95,11 +95,9 @@
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
               <li class="nav-header">Link Rapido</li>
-              <li><a href="alterarClub?ide=${club.ide}">Meu Perfil</a></li>
+              <li class="active"><a href="#">Meu Perfil</a></li>
               <li><a href="./homeClub.jsp">Home</a></li>
-          <!--     <li class="active"><a href="listarClubs?ide=${club.ide}">Listar Clubes</a></li>  -->
-              <li class="active"><a href="listarPlayers?id=${player.id}">Listar Players</a></li>
-          <!--     <li><a href="./procurarClub.jsp">Buscar Club</a></li>  -->
+              <li><a href="listarPlayers?id=${player.id}">Listar Players</a></li>
               <li><a href="./procurarJogador.jsp">Buscar Players</a></li>
               <li class="nav-header">Principais Noticias</li>
               <li><a href="#">Canal de Suporte</a></li>
@@ -117,33 +115,27 @@
         </div><!--/span-->
         <div class="span9">
           <div class="hero-unit">
-            <h1>Lista Geral de Jogadores</h1>
-            <table class="table table-striped"> <!-- width="800px" align="center"> -->
-            <tbody>
-            <thead>
-				<tr>
-					<th>#</th>
-					<th>Nome</th>
-					<th>E-mail</th>
-					<th>Telefone</th>
-					<th>Acao</th>
-					<th>Acao</th>
-				</tr>
-			<c:forEach items="${listaP}" var="p">
-				<tr>
-					<td>${p.id}</td>
-					<td>${p.nome}</td>
-					<td>${p.email}</td>
-					<td>${p.telefone}</td>
-					<td><a href="alterarPlayer?id=${p.id}">Alterar</a></td>
-					<td><a href="excluirPlayers?id=${p.id}">Excluir</a></td></tr>
-			</c:forEach>
-		<tr><td colspan="5">&nbsp</td></tr>
-		<tr><td colspan="5"><a href="homePlayer.jsp">Voltar</a></td></tr>
-		</thead>
-		</tbody>
-	</table>
-	
+            <h1>Editar o Meu Perfil</h1>
+            <form class="form-cadastro " action="salvarCadastroClub?ide=${club.ide}" method="post">
+        <h2 class="form-cadastro-heading">Editar Dados Cadastrais Para Jogadores</h2>
+        <input type="text" name="txtUsername" class="input-block-level" value="${club.usernamee}" placeholder="Nome de Login">
+        <input type="password" name="txtPassword" class="input-block-level" value="${club.passworde}" placeholder="Password">
+        <input type="text" name="txtNome" class="input-block-level"  value="${club.nomee}" placeholder="Nome">
+        <input type="text" name="txtEmail" class="input-block-level"  value="${club.emaile}" placeholder="Email address">
+        <input type="text" name="txtEndereco" class="input-block-level" value="${club.enderecoe}" placeholder="Endere��o">
+        <input type="text" name="txtBairro" class="input-block-level"  value="${club.bairroe}" placeholder="Bairro">
+        <input type="text" name="txtCidade" class="input-block-level"  value="${club.cidadee}" placeholder="Cidade">
+        <input type="text" name="txtTelefone" class="input-block-level"  value="${club.telefonee}" placeholder="Telefone">
+        <input type="text" name="txtCpf" class="input-block-level" value="${club.cpfe}" placeholder="CPF">
+        
+        <a href="homeClub.jsp" class="btn btn-large btn-success"> Tudo Esta Correto</a>
+        <button class="btn btn-large btn-primary" value="alterar" name="btnAlterar" type="submit">Alterar</button>
+        <a href="listaClub.jsp" class="btn btn-large btn-danger" >Excluir</a>
+        <a href="homeClub.jsp" class="btn btn-large">Voltar</a>
+        
+      </form>
+            
+   
 	
             <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
             <p><a class="btn btn-primary btn-large">Learn more &raquo;</a></p>

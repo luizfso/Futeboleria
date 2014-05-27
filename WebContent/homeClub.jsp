@@ -76,7 +76,7 @@
           <a class="brand" href="./bemvindo.jsp">Projeto Futeboleria</a>
           <div class="nav-collapse collapse">
             <p class="navbar-text pull-right">
-              Logged in as <a href="#" class="navbar-link">${player.username}</a>
+              Logged in as <a href="#" class="navbar-link">${club.usernamee}</a>
             </p>
             <ul class="nav">
               <li class="active"><a href="#">Home</a></li>
@@ -94,7 +94,7 @@
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
                <li class="nav-header">Link Rapido</li>
-              <li><a href="alterarPlayer?id=${player.id}">Meu Perfil</a></li>
+              <li><a href="alterarClub?ide=${club.ide}">Meu Perfil</a></li>
               <li class="active"><a href="#">Home</a></li>
               <li><a href="listarPlayers?id=${player.id}">Listar Players</a></li>
               <li><a href="./procurarJogador.jsp">Buscar Players</a></li>
@@ -116,7 +116,7 @@
           <div class="hero-unit">
             <h1>Painel do Clube !</h1>
             <p>Esse e o Painel do clube, aqui voce acompanha as principais noticias do esporte, gerencia suas mensagens, busca novos jogadores, faz contato com jogadores e cria sua rede de networking. Fora tudo isso pode sempre deixar suas informacoes atualizadas. Lembre-se e muito importante para guanhar destaque estar atualizando seu video, suas jogas para que tenha uma melhor visibilidade no portal.</p>
-            <p><a href="alterarPlayer?id=${p.id}" class="btn btn-primary btn-large">Editar minhas Info &raquo;</a></p>
+            <p><a href="alterarClub?ide=${c.ide}" class="btn btn-primary btn-large">Editar minhas Info &raquo;</a></p>
           </div>
           <div class="row-fluid">
             <div class="span4">

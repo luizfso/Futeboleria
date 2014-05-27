@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.futeboleria.jogador.bean.Club;
+import br.com.futeboleria.jogador.bean.Player;
 import br.com.futeboleria.jogador.factory.ConnectionFactory;
 
 public class ClubDAO {
@@ -226,7 +227,7 @@ public class ClubDAO {
 		
 	}
 	
-	public boolean username(String usernamee, String passworde){
+	public boolean usernamee(String usernamee, String passworde){
 
 		String sql = "SELECT * FROM tb_club WHERE usernamee = ? and passworde = ?";
 		
@@ -250,6 +251,46 @@ public class ClubDAO {
 		}
 		
 		return false;
+	}
+	
+	public Club getByUsernamee(String usernamee){
+
+		String sql = "SELECT ide, usernamee, passworde, nomee, emaile, telefonee, enderecoe, bairroe, cidadee, cpfe FROM tb_club WHERE usernamee = ?";
+		
+		Club c = null;
+		
+		try{
+			PreparedStatement stmt = conn.prepareStatement(sql);
+			
+			stmt.setString(1, usernamee);
+			
+			ResultSet rs = stmt.executeQuery();
+
+			
+			if(rs.next()){
+				c = new Club();
+				c.setIde(rs.getInt("ide"));
+				c.setUsernamee(rs.getString("usernamee"));
+				c.setPassworde(rs.getString("passworde"));
+				c.setNomee(rs.getString("nomee"));
+				c.setEmaile(rs.getString("emaile"));
+				c.setTelefonee(rs.getString("telefonee"));
+				c.setEnderecoe(rs.getString("enderecoe"));
+				c.setBairroe(rs.getString("bairroe"));
+				c.setCidadee(rs.getString("cidadee"));
+				c.setCpfe(rs.getString("cpfe"));
+			}
+			
+		}
+		catch(SQLException ex){ 
+			ex.printStackTrace();
+		}
+		finally{
+			
+		}
+		
+		return c;
+		
 	}
 	
 }
