@@ -35,7 +35,7 @@ public class ListaServletPlayer extends HttpServlet {
 		String pagina = "";
 		
 		String voltar = request.getParameter("btnVoltar");
-		String buscar = request.getParameter("btnBuscar");
+		String nome = request.getParameter("nome");
 		
 		if(voltar != null){
 			pagina = "menu.html";
@@ -47,8 +47,7 @@ public class ListaServletPlayer extends HttpServlet {
 			
 			ArrayList<Player> players = null;
 			
-			if(buscar != null){
-				String nome = request.getParameter("txtNome");
+			if(nome != null){
 				players = (ArrayList<Player>)dao.getByNome(nome);
 			}
 			else

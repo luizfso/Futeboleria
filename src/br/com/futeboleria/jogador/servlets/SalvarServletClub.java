@@ -73,7 +73,7 @@ public class SalvarServletClub extends HttpServlet {
 			else{
 				c.setIde(Integer.parseInt(ide));
 				dao.update(c);
-				pagina = "alterarClub?id=" + ide;
+				pagina = "alterarClub?ide=" + ide;
 			}
 			
 			request.setAttribute("player", c);

@@ -117,10 +117,10 @@
             <h1>Procurar Jogador!</h1>
 				<p></p>
 				
-				    <form class="form-search" action="listarPlayers?nome=${player.nome}" method="post">
-					    <input type="text" name="txtNome" class="input-medium search-query" placeholder="Nome">
+				    <form class="form-search" action="listarPlayers" method="get">
+					    <input type="text" name="nome" class="input-medium search-query" placeholder="Nome">
 					    
-					    <button class="btn" type="submit" value="Buscar" name="btnBuscar">Busca</button>
+					    <button class="btn" type="submit" value="Buscar">Busca</button>
 					    
 				    </form>
 				

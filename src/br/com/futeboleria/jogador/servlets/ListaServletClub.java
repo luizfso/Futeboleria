@@ -35,7 +35,7 @@ public class ListaServletClub extends HttpServlet {
 		String pagina = "";
 		
 		String voltar = request.getParameter("btnVoltar");
-		String buscar = request.getParameter("btnBuscar");
+		String club = request.getParameter("club");
 		
 		if(voltar != null){
 			pagina = "menu.html";
@@ -47,9 +47,9 @@ public class ListaServletClub extends HttpServlet {
 			
 			ArrayList<Club> clubs = null;
 			
-			if(buscar != null){
-				String nomee = request.getParameter("txtNomee");
-				clubs = (ArrayList<Club>)dao.getByNomee(nomee);
+			if(club != null){
+				
+				clubs = (ArrayList<Club>)dao.getByNomee(club);
 			}
 			else
 				clubs = (ArrayList<Club>)dao.getAll();

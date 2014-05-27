@@ -97,7 +97,7 @@
               <li class="nav-header">Link Rapido</li>
               <li class="active"><a href="#">Meu Perfil</a></li>
               <li><a href="./homeClub.jsp">Home</a></li>
-              <li><a href="listarPlayers?id=${player.id}">Listar Players</a></li>
+              <li><a href="listarPlayers">Listar Players</a></li>
               <li><a href="./procurarJogador.jsp">Buscar Players</a></li>
               <li class="nav-header">Principais Noticias</li>
               <li><a href="#">Canal de Suporte</a></li>
@@ -118,15 +118,15 @@
             <h1>Editar o Meu Perfil</h1>
             <form class="form-cadastro " action="salvarCadastroClub?ide=${club.ide}" method="post">
         <h2 class="form-cadastro-heading">Editar Dados Cadastrais Para Jogadores</h2>
-        <input type="text" name="txtUsername" class="input-block-level" value="${club.usernamee}" placeholder="Nome de Login">
-        <input type="password" name="txtPassword" class="input-block-level" value="${club.passworde}" placeholder="Password">
-        <input type="text" name="txtNome" class="input-block-level"  value="${club.nomee}" placeholder="Nome">
-        <input type="text" name="txtEmail" class="input-block-level"  value="${club.emaile}" placeholder="Email address">
-        <input type="text" name="txtEndereco" class="input-block-level" value="${club.enderecoe}" placeholder="Endere��o">
-        <input type="text" name="txtBairro" class="input-block-level"  value="${club.bairroe}" placeholder="Bairro">
-        <input type="text" name="txtCidade" class="input-block-level"  value="${club.cidadee}" placeholder="Cidade">
-        <input type="text" name="txtTelefone" class="input-block-level"  value="${club.telefonee}" placeholder="Telefone">
-        <input type="text" name="txtCpf" class="input-block-level" value="${club.cpfe}" placeholder="CPF">
+        <input type="text" name="txtUsernamee" class="input-block-level" value="${club.usernamee}" placeholder="Nome de Login">
+        <input type="password" name="txtPassworde" class="input-block-level" value="${club.passworde}" placeholder="Password">
+        <input type="text" name="txtNomee" class="input-block-level"  value="${club.nomee}" placeholder="Nome">
+        <input type="text" name="txtEmaile" class="input-block-level"  value="${club.emaile}" placeholder="Email address">
+        <input type="text" name="txtEnderecoe" class="input-block-level" value="${club.enderecoe}" placeholder="Endere��o">
+        <input type="text" name="txtBairroe" class="input-block-level"  value="${club.bairroe}" placeholder="Bairro">
+        <input type="text" name="txtCidadee" class="input-block-level"  value="${club.cidadee}" placeholder="Cidade">
+        <input type="text" name="txtTelefonee" class="input-block-level"  value="${club.telefonee}" placeholder="Telefone">
+        <input type="text" name="txtCpfe" class="input-block-level" value="${club.cpfe}" placeholder="CPF">
         
         <a href="homeClub.jsp" class="btn btn-large btn-success"> Tudo Esta Correto</a>
         <button class="btn btn-large btn-primary" value="alterar" name="btnAlterar" type="submit">Alterar</button>

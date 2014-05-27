@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.futeboleria.jogador.bean.Club;
-import br.com.futeboleria.jogador.bean.Player;
 import br.com.futeboleria.jogador.factory.ConnectionFactory;
 
 public class ClubDAO {
@@ -55,21 +54,21 @@ public class ClubDAO {
 	
 	public void update(Club c){
 
-		String sql = "UPDATE tb_club SET usernamee = ? passworde = ? nomee = ?, emaile = ?, telefonee = ?, enderecoe = ?, bairroe = ?, cidadee = ?, cpfe = ? WHERE ide = ?";
+		String sql = "UPDATE tb_club SET usernamee = ?, passworde = ?, nomee = ?, emaile = ?, telefonee = ?, enderecoe = ?, bairroe = ?, cidadee = ?, cpfe = ? WHERE ide = ?";
 		
 		try{
 			PreparedStatement stmt = conn.prepareStatement(sql);
-			
-			stmt.setString(1, c.getPassworde());
-			stmt.setString(2, c.getUsernamee());
-			stmt.setString(1, c.getNomee());
-			stmt.setString(2, c.getEmaile());
-			stmt.setString(3, c.getTelefonee());
-			stmt.setString(4, c.getEnderecoe());
-			stmt.setString(5, c.getBairroe());
-			stmt.setString(6, c.getCidadee());
-			stmt.setString(7, c.getCpfe());
-			stmt.setInt(8, c.getIde());		
+
+			stmt.setString(1, c.getUsernamee());
+			stmt.setString(2, c.getPassworde());
+			stmt.setString(3, c.getNomee());
+			stmt.setString(4, c.getEmaile());
+			stmt.setString(5, c.getTelefonee());
+			stmt.setString(6, c.getEnderecoe());
+			stmt.setString(7, c.getBairroe());
+			stmt.setString(8, c.getCidadee());
+			stmt.setString(9, c.getCpfe());
+			stmt.setInt(10, c.getIde());		
 			stmt.executeUpdate();
 
 		}
@@ -186,7 +185,7 @@ public class ClubDAO {
 	
 	public List<Club> getByNomee(String nomee){
 
-		String sql = "SELECT ide, nomee, emaile, telefonee FROM tb_club WHERE nomee LIKE ? ORDER BY nomee";
+		String sql = "SELECT ide, usernamee, passworde, nomee, emaile, telefonee, enderecoe, bairroe, cidadee, cpfe FROM tb_club WHERE nomee LIKE ? ORDER BY nomee";
 		
 		List<Club> clubs = null;
 		

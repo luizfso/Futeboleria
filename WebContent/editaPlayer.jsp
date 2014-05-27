@@ -97,7 +97,7 @@
               <li class="nav-header">Link Rapido</li>
               <li class="active"><a href="#">Meu Perfil</a></li>
               <li><a href="./homePlayer.jsp">Home</a></li>
-              <li><a href="listarClubs?ide=${club.ide}">Listar Clubes</a></li>
+              <li><a href="listarClubs">Listar Clubes</a></li>
               <li><a href="./procurarClub.html">Buscar Club</a></li>
               <li class="nav-header">Principais Noticias</li>
               <li><a href="#">Canal de Suporte</a></li>

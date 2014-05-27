@@ -186,7 +186,7 @@ public class PlayerDAO {
 	
 	public List<Player> getByNome(String nome){
 
-		String sql = "SELECT id, nome, email, telefone FROM tb_player WHERE nome LIKE ? ORDER BY nome";
+		String sql = "SELECT id, username, password, nome, email, telefone, endereco, bairro, cidade, cpf FROM tb_player WHERE nome LIKE ? ORDER BY nome";
 		
 		List<Player> players = null;
 		

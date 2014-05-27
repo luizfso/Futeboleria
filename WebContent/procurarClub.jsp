@@ -119,10 +119,10 @@
             <h1>Procurar Clube!</h1>
 				<p></p>
 				
-				    <form class="form-search" action="listarClubs?nomee=${club.nome}" method="post">
-					    <input type="text" name="txtNome" class="input-medium search-query" placeholder="Nome">
+				    <form class="form-search" action="listarClubs" method="get">
+					    <input type="text" name="club" class="input-medium search-query" placeholder="Clube">
 					    
-					    <button class="btn" type="submit" value="Buscar" name="btnBuscar">Busca</button>
+					    <button class="btn" type="submit" value="Buscar" >Busca</button>
 					    
 				    </form>
 				
