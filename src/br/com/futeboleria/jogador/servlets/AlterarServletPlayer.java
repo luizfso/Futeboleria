@@ -14,6 +14,7 @@ import javax.servlet.http.HttpSession;
 import br.com.futeboleria.jogador.bean.Player;
 import br.com.futeboleria.jogador.dao.PlayerDAO;
 
+@SuppressWarnings("unused")
 @WebServlet("/alterarPlayer")
 public class AlterarServletPlayer extends HttpServlet {
 	private static final long serialVersionUID = 1L;

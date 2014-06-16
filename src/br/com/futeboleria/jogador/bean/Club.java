@@ -2,76 +2,76 @@ package br.com.futeboleria.jogador.bean;
 
 public class Club {
 
-	private Integer ide;
-	private String usernamee;
-	private String passworde;
-	private String nomee;
-	private String emaile;
-	private String telefonee;
-	private String enderecoe;
-	private String bairroe;
-	private String cidadee;
-	private String cpfe;
+	private Integer id;
+	private String username;
+	private String password;
+	private String nome;
+	private String email;
+	private String telefone;
+	private String endereco;
+	private String bairro;
+	private String cidade;
+	private String cpf;
 	
-	public Integer getIde() {
-		return ide;
+	public Integer getId() {
+		return id;
 	}
-	public void setIde(Integer ide) {
-		this.ide = ide;
+	public void setId(Integer id) {
+		this.id = id;
 	}
-	public String getUsernamee() {
-		return usernamee;
+	public String getUsername() {
+		return username;
 	}
-	public void setUsernamee(String usernamee) {
-		this.usernamee = usernamee;
+	public void setUsername(String username) {
+		this.username = username;
 	}
-	public String getPassworde() {
-		return passworde;
+	public String getPassword() {
+		return password;
 	}
-	public void setPassworde(String passworde) {
-		this.passworde = passworde;
+	public void setPassword(String password) {
+		this.password = password;
 	}
-	public String getNomee() {
-		return nomee;
+	public String getNome() {
+		return nome;
 	}
-	public void setNomee(String nomee) {
-		this.nomee = nomee;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
-	public String getEmaile() {
-		return emaile;
+	public String getEmail() {
+		return email;
 	}
-	public void setEmaile(String emaile) {
-		this.emaile = emaile;
+	public void setEmail(String email) {
+		this.email = email;
 	}
-	public String getTelefonee() {
-		return telefonee;
+	public String getTelefone() {
+		return telefone;
 	}
-	public void setTelefonee(String telefonee) {
-		this.telefonee = telefonee;
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
 	}
-	public String getEnderecoe() {
-		return enderecoe;
+	public String getEndereco() {
+		return endereco;
 	}
-	public void setEnderecoe(String enderecoe) {
-		this.enderecoe = enderecoe;
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
 	}
-	public String getBairroe() {
-		return bairroe;
+	public String getBairro() {
+		return bairro;
 	}
-	public void setBairroe(String bairroe) {
-		this.bairroe = bairroe;
+	public void setBairro(String bairro) {
+		this.bairro = bairro;
 	}
-	public String getCidadee() {
-		return cidadee;
+	public String getCidade() {
+		return cidade;
 	}
-	public void setCidadee(String cidadee) {
-		this.cidadee = cidadee;
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
 	}
-	public String getCpfe() {
-		return cpfe;
+	public String getCpf() {
+		return cpf;
 	}
-	public void setCpfe(String cpfe) {
-		this.cpfe = cpfe;
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
 	}
 	
 }

@@ -64,20 +64,24 @@
 
     <div class="container">
 
-      <form class="form-cadastro " action="salvarCadastroClub?ide=${club.ide}" method="post">
+      <form class="form-cadastro " action="salvarCadastroClub?id=${club.id}" method="post">
         <h2 class="form-cadastro-heading">Dados Cadastrais Para Clube</h2>
-        <input type="text" name="txtUsernamee" class="input-block-level" placeholder="Nome de Login">
-        <input type="password" name="txtPassworde" class="input-block-level" placeholder="Password">
-        <input type="text" name="txtNomee" class="input-block-level"  placeholder="Nome">
-        <input type="text" name="txtEmaile" class="input-block-level"  placeholder="Email address">
-        <input type="text" name="txtEnderecoe" class="input-block-level" placeholder="Endereço">
-        <input type="text" name="txtBairroe" class="input-block-level"  placeholder="Bairro">
-        <input type="text" name="txtCidadee" class="input-block-level"  placeholder="Cidade">
-        <input type="text" name="txtTelefonee" class="input-block-level"  placeholder="Telefone">
-        <input type="text" name="txtCpfe" class="input-block-level" placeholder="CPF">
+        <input type="text" name="txtUsername" class="input-block-level" placeholder="Nome de Login">
+        <input type="password" name="txtPassword" class="input-block-level" placeholder="Password">
+        <input type="text" name="txtNome" class="input-block-level"  placeholder="Nome">
+        <input type="text" name="txtEmail" class="input-block-level"  placeholder="Email address">
+        <input type="text" name="txtEndereco" class="input-block-level" placeholder="Endereço">
+        <input type="text" name="txtBairro" class="input-block-level"  placeholder="Bairro">
+        <input type="text" name="txtCidade" class="input-block-level"  placeholder="Cidade">
+        <input type="text" name="txtTelefone" class="input-block-level"  placeholder="Telefone">
+        <input type="text" name="txtCpf" class="input-block-level" placeholder="CPF">
         
         <button class="btn btn-large btn-primary" value="salvar" name="btnSalvar" type="submit">Salvar</button>
       </form>
+
+	<footer>
+        <p>&copy; 4Sports - Projeto Futeboleria 2014</p>
+	</footer>
 
     </div> <!-- /container -->
 

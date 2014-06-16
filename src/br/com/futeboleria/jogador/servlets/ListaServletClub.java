@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.futeboleria.jogador.bean.Club;
 import br.com.futeboleria.jogador.dao.ClubDAO;
 
+@SuppressWarnings("unused")
 @WebServlet("/listarClubs")
 public class ListaServletClub extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -49,7 +50,7 @@ public class ListaServletClub extends HttpServlet {
 			
 			if(club != null){
 				
-				clubs = (ArrayList<Club>)dao.getByNomee(club);
+				clubs = (ArrayList<Club>)dao.getByNome(club);
 			}
 			else
 				clubs = (ArrayList<Club>)dao.getAll();

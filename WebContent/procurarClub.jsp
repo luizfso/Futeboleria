@@ -97,7 +97,7 @@
               <li><a href="alterarPlayer?id=${player.id}">Meu Perfil</a></li>
               <li><a href="./homePlayer.jsp">Home</a></li>
           <!--     <li class="active"><a href="listarPlayers?id=${player.id}">Listar Players</a></li>  -->
-          	  <li><a href="listarClubs?ide=${club.ide}">Listar Clubes</a></li>
+          	  <li><a href="listarClubs?id=${club.id}">Listar Clubes</a></li>
           <!--    <li><a href="./procurarJogador.jsp">Buscar Players</a></li>  -->
           	  <li class="active"><a href="./procurarClub.jsp">Buscar Club</a></li> 
               <li class="nav-header">Principais Noticias</li>
@@ -177,7 +177,7 @@
       <hr>
 
       <footer>
-        <p>&copy; Company 2012</p>
+        <p>&copy; 4Sports - Projeto Futeboleria 2014</p>
       </footer>
 
     </div><!--/.fluid-container-->

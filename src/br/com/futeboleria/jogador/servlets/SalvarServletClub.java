@@ -9,11 +9,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import br.com.futeboleria.jogador.bean.Club;
-import br.com.futeboleria.jogador.bean.Player;
 import br.com.futeboleria.jogador.dao.ClubDAO;
-import br.com.futeboleria.jogador.dao.PlayerDAO;
 
 @WebServlet("/salvarCadastroClub")
 public class SalvarServletClub extends HttpServlet {
@@ -33,18 +32,20 @@ public class SalvarServletClub extends HttpServlet {
 
 	protected void requestHandler(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
+		HttpSession session = request.getSession();
+		
 		String pagina = "";
 		
-		String ide = request.getParameter("ide");
-		String usernamee = request.getParameter("txtUsernamee");
-		String passworde = request.getParameter("txtPassworde");
-		String nomee = request.getParameter("txtNomee");
-		String emaile = request.getParameter("txtEmaile");
-		String enderecoe = request.getParameter("txtEnderecoe");
-		String bairroe = request.getParameter("txtBairroe");
-		String cidadee = request.getParameter("txtCidadee");
-		String telefonee = request.getParameter("txtTelefonee");
-		String cpfe = request.getParameter("txtCpfe");
+		String id = request.getParameter("id");
+		String username = request.getParameter("txtUsername");
+		String password = request.getParameter("txtPassword");
+		String nome = request.getParameter("txtNome");
+		String email = request.getParameter("txtEmail");
+		String endereco = request.getParameter("txtEndereco");
+		String bairro = request.getParameter("txtBairro");
+		String cidade = request.getParameter("txtCidade");
+		String telefone = request.getParameter("txtTelefone");
+		String cpf = request.getParameter("txtCpf");
 		
 		String voltar = request.getParameter("btnVoltar");
 		
@@ -54,29 +55,32 @@ public class SalvarServletClub extends HttpServlet {
 		else{
 			
 			Club c = new Club();
-			c.setUsernamee(usernamee);
-			c.setPassworde(passworde);
-			c.setNomee(nomee);
-			c.setEmaile(emaile);
-			c.setEnderecoe(enderecoe);
-			c.setBairroe(bairroe);
-			c.setCidadee(cidadee);
-			c.setTelefonee(telefonee);
-			c.setCpfe(cpfe);
+			c.setUsername(username);
+			c.setPassword(password);
+			c.setNome(nome);
+			c.setEmail(email);
+			c.setEndereco(endereco);
+			c.setBairro(bairro);
+			c.setCidade(cidade);
+			c.setTelefone(telefone);
+			c.setCpf(cpf);
 			
 			ClubDAO dao = new ClubDAO();
 			
-			if(ide.equals("")){
+			if(id.equals("")){
 				dao.insert(c);
+				c = dao.getByUsername(username);
+				request.setAttribute("club", c);
+				session.setAttribute("club", c);
 				pagina = "homeClub.jsp";
 			}
 			else{
-				c.setIde(Integer.parseInt(ide));
+				c.setId(Integer.parseInt(id));
 				dao.update(c);
-				pagina = "alterarClub?ide=" + ide;
+				pagina = "alterarClub?id=" + id;
 			}
 			
-			request.setAttribute("player", c);
+			request.setAttribute("club", c);
 			
 			ArrayList<Club> clubs = (ArrayList<Club>) dao.getAll();
 			request.setAttribute("listaC", clubs);

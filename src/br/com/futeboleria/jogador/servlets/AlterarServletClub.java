@@ -12,9 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import br.com.futeboleria.jogador.bean.Club;
-import br.com.futeboleria.jogador.bean.Player;
 import br.com.futeboleria.jogador.dao.ClubDAO;
 
+@SuppressWarnings("unused")
 @WebServlet("/alterarClub")
 public class AlterarServletClub extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -39,9 +39,9 @@ public class AlterarServletClub extends HttpServlet {
 		
 		ClubDAO dao = new ClubDAO();
 		
-		Integer ide = ((Club)session.getAttribute("club")).getIde();
+		Integer id = ((Club)session.getAttribute("club")).getId();
 		
-		Club c = dao.getByPK(ide);
+		Club c = dao.getByPK(id);
 		
 		pagina = "editaClub.jsp";
 		

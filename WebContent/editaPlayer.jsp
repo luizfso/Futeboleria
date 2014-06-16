@@ -179,9 +179,9 @@
 
       <hr>
 
-      <footer>
-        <p>&copy; Company 2012</p>
-      </footer>
+	<footer>
+        <p>&copy; 4Sports - Projeto Futeboleria 2014</p>
+	</footer>
 
     </div><!--/.fluid-container-->
 

@@ -73,6 +73,10 @@
         <button class="btn btn-large btn-primary" type="submit">Entrar</button>
       </form>
 
+	<footer>
+        <p>&copy; 4Sports - Projeto Futeboleria 2014</p>
+	</footer>
+	
     </div> <!-- /container -->
 
     <!-- Le javascript

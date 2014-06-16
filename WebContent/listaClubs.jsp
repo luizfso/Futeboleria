@@ -98,7 +98,7 @@
               <li><a href="alterarPlayer?id=${player.id}">Meu Perfil</a></li>
               <li><a href="./homePlayer.jsp">Home</a></li>
           <!--     <li class="active"><a href="listarPlayers?id=${player.id}">Listar Players</a></li>  -->
-          	  <li class="active"><a href="listarClubs?ide=${club.ide}">Listar Clubes</a></li>
+          	  <li class="active"><a href="listarClubs?id=${club.id}">Listar Clubes</a></li>
           <!--    <li><a href="./procurarJogador.jsp">Buscar Players</a></li>  -->
           	  <li><a href="./procurarClub.jsp">Buscar Club</a></li> 
               <li class="nav-header">Principais Noticias</li>
@@ -131,12 +131,12 @@
 				</tr>
 			<c:forEach items="${listaC}" var="c">
 				<tr>
-					<td>${c.ide}</td>
-					<td>${c.nomee}</td>
-					<td>${c.emaile}</td>
-					<td>${c.telefonee}</td>
-					<td><a href="alterarClub?ide=${c.ide}">Alterar</a></td>
-					<td><a href="excluirClubs?ide=${c.ide}">Excluir</a></td></tr>
+					<td>${c.id}</td>
+					<td>${c.nome}</td>
+					<td>${c.email}</td>
+					<td>${c.telefone}</td>
+					<td><a href="alterarClub?id=${c.id}">Me Candidatar</a></td>
+					<td><a href="excluirClubs?id=${c.id}">Excluir Candidatura</a></td></tr>
 			</c:forEach>
 		<tr><td colspan="5">&nbsp</td></tr>
 		<tr><td colspan="5"><a href="homeClub.jsp">Voltar</a></td></tr>
@@ -188,7 +188,7 @@
       <hr>
 
       <footer>
-        <p>&copy; Company 2012</p>
+        <p>&copy; 4Sports - Projeto Futeboleria 2014</p>
       </footer>
 
     </div><!--/.fluid-container-->

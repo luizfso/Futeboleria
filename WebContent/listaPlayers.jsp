@@ -77,7 +77,7 @@
           <a class="brand" href="./bemvindo.jsp">Projeto Futeboleria</a>
           <div class="nav-collapse collapse">
             <p class="navbar-text pull-right">
-              Logged in as <a href="#" class="navbar-link">${player.username}</a>
+              Logged in as <a href="#" class="navbar-link">${club.username}</a>
             </p>
             <ul class="nav">
               <li class="active"><a href="#">Home</a></li>
@@ -95,9 +95,9 @@
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
               <li class="nav-header">Link Rapido</li>
-              <li><a href="alterarClub?ide=${club.ide}">Meu Perfil</a></li>
+              <li><a href="alterarClub?id=${club.id}">Meu Perfil</a></li>
               <li><a href="./homeClub.jsp">Home</a></li>
-          <!--     <li class="active"><a href="listarClubs?ide=${club.ide}">Listar Clubes</a></li>  -->
+          <!--     <li class="active"><a href="listarClubs?id=${club.id}">Listar Clubes</a></li>  -->
               <li class="active"><a href="listarPlayers?id=${player.id}">Listar Players</a></li>
           <!--     <li><a href="./procurarClub.jsp">Buscar Club</a></li>  -->
               <li><a href="./procurarJogador.jsp">Buscar Players</a></li>
@@ -135,8 +135,8 @@
 					<td>${p.nome}</td>
 					<td>${p.email}</td>
 					<td>${p.telefone}</td>
-					<td><a href="alterarPlayer?id=${p.id}">Alterar</a></td>
-					<td><a href="excluirPlayers?id=${p.id}">Excluir</a></td></tr>
+					<td><a href="alterarPlayer?id=${p.id}">Convocar</a></td>
+					<td><a href="excluirPlayers?id=${p.id}">Dispensar</a></td></tr>
 			</c:forEach>
 		<tr><td colspan="5">&nbsp</td></tr>
 		<tr><td colspan="5"><a href="homePlayer.jsp">Voltar</a></td></tr>
@@ -188,7 +188,7 @@
       <hr>
 
       <footer>
-        <p>&copy; Company 2012</p>
+        <p>&copy; 4Sports - Projeto Futeboleria 2014</p>
       </footer>
 
     </div><!--/.fluid-container-->

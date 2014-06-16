@@ -76,7 +76,7 @@
           <a class="brand" href="./bemvindo.jsp">Projeto Futeboleria</a>
           <div class="nav-collapse collapse">
             <p class="navbar-text pull-right">
-              Logged in as <a href="#" class="navbar-link">${player.username}</a>
+              Logged in as <a href="#" class="navbar-link">${club.username}</a>
             </p>
             <ul class="nav">
               <li class="active"><a href="#">Home</a></li>
@@ -175,7 +175,7 @@
       <hr>
 
       <footer>
-        <p>&copy; Company 2012</p>
+        <p>&copy; 4Sports - Projeto Futeboleria 2014</p>
       </footer>
 
     </div><!--/.fluid-container-->

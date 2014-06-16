@@ -24,20 +24,20 @@ public class ClubDAO {
 	
 	public void insert(Club c){
 
-		String sql = "INSERT INTO tb_club (usernamee, passworde, nomee, emaile, telefonee, enderecoe, bairroe, cidadee, cpfe) VALUES (?,?,?,?,?,?,?,?,?)";
+		String sql = "INSERT INTO tb_club (username, password, nome, email, telefone, endereco, bairro, cidade, cpf) VALUES (?,?,?,?,?,?,?,?,?)";
 		
 		try{
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			
-			stmt.setString(1, c.getUsernamee());
-			stmt.setString(2, c.getPassworde());
-			stmt.setString(3, c.getNomee());
-			stmt.setString(4, c.getEmaile());
-			stmt.setString(5, c.getTelefonee());
-			stmt.setString(6, c.getEnderecoe());
-			stmt.setString(7, c.getBairroe());
-			stmt.setString(8, c.getCidadee());
-			stmt.setString(9, c.getCpfe());
+			stmt.setString(1, c.getUsername());
+			stmt.setString(2, c.getPassword());
+			stmt.setString(3, c.getNome());
+			stmt.setString(4, c.getEmail());
+			stmt.setString(5, c.getTelefone());
+			stmt.setString(6, c.getEndereco());
+			stmt.setString(7, c.getBairro());
+			stmt.setString(8, c.getCidade());
+			stmt.setString(9, c.getCpf());
 					
 			stmt.executeUpdate();
 
@@ -54,21 +54,22 @@ public class ClubDAO {
 	
 	public void update(Club c){
 
-		String sql = "UPDATE tb_club SET usernamee = ?, passworde = ?, nomee = ?, emaile = ?, telefonee = ?, enderecoe = ?, bairroe = ?, cidadee = ?, cpfe = ? WHERE ide = ?";
+		String sql = "UPDATE tb_club SET username = ?, password = ?, nome = ?, email = ?, telefone = ?, endereco = ?, bairro = ?, cidade = ?, cpf = ? WHERE id = ?";
 		
 		try{
 			PreparedStatement stmt = conn.prepareStatement(sql);
 
-			stmt.setString(1, c.getUsernamee());
-			stmt.setString(2, c.getPassworde());
-			stmt.setString(3, c.getNomee());
-			stmt.setString(4, c.getEmaile());
-			stmt.setString(5, c.getTelefonee());
-			stmt.setString(6, c.getEnderecoe());
-			stmt.setString(7, c.getBairroe());
-			stmt.setString(8, c.getCidadee());
-			stmt.setString(9, c.getCpfe());
-			stmt.setInt(10, c.getIde());		
+			stmt.setString(1, c.getUsername());
+			stmt.setString(2, c.getPassword());
+			stmt.setString(3, c.getNome());
+			stmt.setString(4, c.getEmail());
+			stmt.setString(5, c.getTelefone());
+			stmt.setString(6, c.getEndereco());
+			stmt.setString(7, c.getBairro());
+			stmt.setString(8, c.getCidade());
+			stmt.setString(9, c.getCpf());
+			stmt.setInt(10, c.getId());
+			
 			stmt.executeUpdate();
 
 		}
@@ -81,14 +82,14 @@ public class ClubDAO {
 		
 	}
 	
-	public void delete(Integer ide){
+	public void delete(Integer id){
 
-		String sql = "DELETE FROM tb_club WHERE ide = ?";
+		String sql = "DELETE FROM tb_club WHERE id = ?";
 		
 		try{
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			
-			stmt.setInt(1, ide);
+			stmt.setInt(1, id);
 			
 			stmt.executeUpdate();
 
@@ -104,7 +105,7 @@ public class ClubDAO {
 	
 	public List<Club> getAll(){
 
-		String sql = "SELECT ide, usernamee, passworde, nomee, emaile, telefonee, enderecoe, bairroe, cidadee, cpfe FROM tb_club ORDER BY usernamee";
+		String sql = "SELECT id, username, password, nome, email, telefone, endereco, bairro, cidade, cpf FROM tb_club ORDER BY username";
 		
 		List<Club> clubs = null;
 		
@@ -117,16 +118,16 @@ public class ClubDAO {
 			
 			while(rs.next()){
 				Club c = new Club();
-				c.setIde(rs.getInt("ide"));
-				c.setUsernamee(rs.getString("usernamee"));
-				c.setPassworde(rs.getString("passworde"));
-				c.setNomee(rs.getString("nomee"));
-				c.setEmaile(rs.getString("emaile"));
-				c.setTelefonee(rs.getString("telefonee"));
-				c.setEnderecoe(rs.getString("enderecoe"));
-				c.setBairroe(rs.getString("bairroe"));
-				c.setCidadee(rs.getString("cidadee"));
-				c.setCpfe(rs.getString("cpfe"));
+				c.setId(rs.getInt("id"));
+				c.setUsername(rs.getString("username"));
+				c.setPassword(rs.getString("password"));
+				c.setNome(rs.getString("nome"));
+				c.setEmail(rs.getString("email"));
+				c.setTelefone(rs.getString("telefone"));
+				c.setEndereco(rs.getString("endereco"));
+				c.setBairro(rs.getString("bairro"));
+				c.setCidade(rs.getString("cidade"));
+				c.setCpf(rs.getString("cpf"));
 				
 				clubs.add(c);
 			}
@@ -143,32 +144,32 @@ public class ClubDAO {
 		
 	}
 	
-	public Club getByPK(Integer ide){
+	public Club getByPK(Integer id){
 
-		String sql = "SELECT ide, usernamee, passworde, nomee, emaile, telefonee, enderecoe, bairroe, cidadee, cpfe FROM tb_club WHERE ide = ?";
+		String sql = "SELECT id, username, password, nome, email, telefone, endereco, bairro, cidade, cpf FROM tb_club WHERE id = ?";
 		
 		Club c = null;
 		
 		try{
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			
-			stmt.setInt(1, ide);
+			stmt.setInt(1, id);
 			
 			ResultSet rs = stmt.executeQuery();
 
 			
 			if(rs.next()){
 				c = new Club();
-				c.setIde(rs.getInt("ide"));
-				c.setUsernamee(rs.getString("usernamee"));
-				c.setPassworde(rs.getString("passworde"));
-				c.setNomee(rs.getString("nomee"));
-				c.setEmaile(rs.getString("emaile"));
-				c.setTelefonee(rs.getString("telefonee"));
-				c.setEnderecoe(rs.getString("enderecoe"));
-				c.setBairroe(rs.getString("bairroe"));
-				c.setCidadee(rs.getString("cidadee"));
-				c.setCpfe(rs.getString("cpfe"));
+				c.setId(rs.getInt("id"));
+				c.setUsername(rs.getString("username"));
+				c.setPassword(rs.getString("password"));
+				c.setNome(rs.getString("nome"));
+				c.setEmail(rs.getString("email"));
+				c.setTelefone(rs.getString("telefone"));
+				c.setEndereco(rs.getString("endereco"));
+				c.setBairro(rs.getString("bairro"));
+				c.setCidade(rs.getString("cidade"));
+				c.setCpf(rs.getString("cpf"));
 			}
 			
 		}
@@ -183,16 +184,16 @@ public class ClubDAO {
 		
 	}
 	
-	public List<Club> getByNomee(String nomee){
+	public List<Club> getByNome(String nome){
 
-		String sql = "SELECT ide, usernamee, passworde, nomee, emaile, telefonee, enderecoe, bairroe, cidadee, cpfe FROM tb_club WHERE nomee LIKE ? ORDER BY nomee";
+		String sql = "SELECT id, username, password, nome, email, telefone, endereco, bairro, cidade, cpf FROM tb_club WHERE nome LIKE ? ORDER BY nome";
 		
 		List<Club> clubs = null;
 		
 		try{
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			
-			stmt.setString(1, '%' + nomee + '%');
+			stmt.setString(1, '%' + nome + '%');
 			
 			ResultSet rs = stmt.executeQuery();
 
@@ -200,16 +201,16 @@ public class ClubDAO {
 			
 			while(rs.next()){
 				Club c = new Club();
-				c.setIde(rs.getInt("ide"));
-				c.setUsernamee(rs.getString("usernamee"));
-				c.setPassworde(rs.getString("passworde"));
-				c.setNomee(rs.getString("nomee"));
-				c.setEmaile(rs.getString("emaile"));
-				c.setTelefonee(rs.getString("telefonee"));
-				c.setEnderecoe(rs.getString("enderecoe"));
-				c.setBairroe(rs.getString("bairroe"));
-				c.setCidadee(rs.getString("cidadee"));
-				c.setCpfe(rs.getString("cpfe"));
+				c.setId(rs.getInt("id"));
+				c.setUsername(rs.getString("username"));
+				c.setPassword(rs.getString("password"));
+				c.setNome(rs.getString("nome"));
+				c.setEmail(rs.getString("email"));
+				c.setTelefone(rs.getString("telefone"));
+				c.setEndereco(rs.getString("endereco"));
+				c.setBairro(rs.getString("bairro"));
+				c.setCidade(rs.getString("cidade"));
+				c.setCpf(rs.getString("cpf"));
 				
 				clubs.add(c);
 			}
@@ -226,15 +227,15 @@ public class ClubDAO {
 		
 	}
 	
-	public boolean usernamee(String usernamee, String passworde){
+	public boolean username(String username, String password){
 
-		String sql = "SELECT * FROM tb_club WHERE usernamee = ? and passworde = ?";
+		String sql = "SELECT * FROM tb_club WHERE username = ? and password = ?";
 		
 		try{
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			
-			stmt.setString(1, usernamee);
-			stmt.setString(2, passworde);
+			stmt.setString(1, username);
+			stmt.setString(2, password);
 					
 			ResultSet rs = stmt.executeQuery();
 			
@@ -252,32 +253,32 @@ public class ClubDAO {
 		return false;
 	}
 	
-	public Club getByUsernamee(String usernamee){
+	public Club getByUsername(String username){
 
-		String sql = "SELECT ide, usernamee, passworde, nomee, emaile, telefonee, enderecoe, bairroe, cidadee, cpfe FROM tb_club WHERE usernamee = ?";
+		String sql = "SELECT id, username, password, nome, email, telefone, endereco, bairro, cidade, cpf FROM tb_club WHERE username = ?";
 		
 		Club c = null;
 		
 		try{
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			
-			stmt.setString(1, usernamee);
+			stmt.setString(1, username);
 			
 			ResultSet rs = stmt.executeQuery();
 
 			
 			if(rs.next()){
 				c = new Club();
-				c.setIde(rs.getInt("ide"));
-				c.setUsernamee(rs.getString("usernamee"));
-				c.setPassworde(rs.getString("passworde"));
-				c.setNomee(rs.getString("nomee"));
-				c.setEmaile(rs.getString("emaile"));
-				c.setTelefonee(rs.getString("telefonee"));
-				c.setEnderecoe(rs.getString("enderecoe"));
-				c.setBairroe(rs.getString("bairroe"));
-				c.setCidadee(rs.getString("cidadee"));
-				c.setCpfe(rs.getString("cpfe"));
+				c.setId(rs.getInt("id"));
+				c.setUsername(rs.getString("username"));
+				c.setPassword(rs.getString("password"));
+				c.setNome(rs.getString("nome"));
+				c.setEmail(rs.getString("email"));
+				c.setTelefone(rs.getString("telefone"));
+				c.setEndereco(rs.getString("endereco"));
+				c.setBairro(rs.getString("bairro"));
+				c.setCidade(rs.getString("cidade"));
+				c.setCpf(rs.getString("cpf"));
 			}
 			
 		}

@@ -77,7 +77,7 @@
           <a class="brand" href="./bemvindo.jsp">Projeto Futeboleria</a>
           <div class="nav-collapse collapse">
             <p class="navbar-text pull-right">
-              Logged in as <a href="#" class="navbar-link">${club.usernamee}</a>
+              Logged in as <a href="#" class="navbar-link">${club.username}</a>
             </p>
             <ul class="nav">
               <li class="active"><a href="#">Home</a></li>
@@ -116,17 +116,17 @@
         <div class="span9">
           <div class="hero-unit">
             <h1>Editar o Meu Perfil</h1>
-            <form class="form-cadastro " action="salvarCadastroClub?ide=${club.ide}" method="post">
+            <form class="form-cadastro " action="salvarCadastroClub?id=${club.id}" method="post">
         <h2 class="form-cadastro-heading">Editar Dados Cadastrais Para Jogadores</h2>
-        <input type="text" name="txtUsernamee" class="input-block-level" value="${club.usernamee}" placeholder="Nome de Login">
-        <input type="password" name="txtPassworde" class="input-block-level" value="${club.passworde}" placeholder="Password">
-        <input type="text" name="txtNomee" class="input-block-level"  value="${club.nomee}" placeholder="Nome">
-        <input type="text" name="txtEmaile" class="input-block-level"  value="${club.emaile}" placeholder="Email address">
-        <input type="text" name="txtEnderecoe" class="input-block-level" value="${club.enderecoe}" placeholder="Endere��o">
-        <input type="text" name="txtBairroe" class="input-block-level"  value="${club.bairroe}" placeholder="Bairro">
-        <input type="text" name="txtCidadee" class="input-block-level"  value="${club.cidadee}" placeholder="Cidade">
-        <input type="text" name="txtTelefonee" class="input-block-level"  value="${club.telefonee}" placeholder="Telefone">
-        <input type="text" name="txtCpfe" class="input-block-level" value="${club.cpfe}" placeholder="CPF">
+        <input type="text" name="txtUsername" class="input-block-level" value="${club.username}" placeholder="Nome de Login">
+        <input type="password" name="txtPassword" class="input-block-level" value="${club.password}" placeholder="Password">
+        <input type="text" name="txtNome" class="input-block-level"  value="${club.nome}" placeholder="Nome">
+        <input type="text" name="txtEmail" class="input-block-level"  value="${club.email}" placeholder="Email address">
+        <input type="text" name="txtEndereco" class="input-block-level" value="${club.endereco}" placeholder="Endere��o">
+        <input type="text" name="txtBairro" class="input-block-level"  value="${club.bairro}" placeholder="Bairro">
+        <input type="text" name="txtCidade" class="input-block-level"  value="${club.cidade}" placeholder="Cidade">
+        <input type="text" name="txtTelefone" class="input-block-level"  value="${club.telefone}" placeholder="Telefone">
+        <input type="text" name="txtCpf" class="input-block-level" value="${club.cpf}" placeholder="CPF">
         
         <a href="homeClub.jsp" class="btn btn-large btn-success"> Tudo Esta Correto</a>
         <button class="btn btn-large btn-primary" value="alterar" name="btnAlterar" type="submit">Alterar</button>
@@ -179,9 +179,9 @@
 
       <hr>
 
-      <footer>
-        <p>&copy; Company 2012</p>
-      </footer>
+	<footer>
+        <p>&copy; 4Sports - Projeto Futeboleria 2014</p>
+	</footer>
 
     </div><!--/.fluid-container-->
 

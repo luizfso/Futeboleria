@@ -35,13 +35,13 @@ public class LoginServletClub extends HttpServlet {
 		
 		String pagina = "";
 		
-		String usernamee = request.getParameter("txtLogin");
-		String senhae = request.getParameter("txtSenha");
+		String username = request.getParameter("txtLogin");
+		String senha = request.getParameter("txtSenha");
 		
 		ClubDAO dao = new ClubDAO();
-		Boolean logado = dao.usernamee(usernamee, senhae);
+		Boolean logado = dao.username(username, senha);
 		
-		Club c = dao.getByUsernamee(usernamee);
+		Club c = dao.getByUsername(username);
 		
 		request.setAttribute("club", c);
 		session.setAttribute("club", c);

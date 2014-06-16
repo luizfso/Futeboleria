@@ -79,6 +79,10 @@
         <button class="btn btn-large btn-primary" value="salvar" name="btnSalvar" type="submit">Salvar</button>
       </form>
 
+	<footer>
+        <p>&copy; 4Sports - Projeto Futeboleria 2014</p>
+	</footer>
+
     </div> <!-- /container -->
 
     <!-- Le javascript
