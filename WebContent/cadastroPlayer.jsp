@@ -64,7 +64,7 @@
 
     <div class="container">
 
-      <form class="form-cadastro " action="salvarCadastroPlayer?id=${player.id}" method="post">
+      <form class="form-cadastro " action="novoCadastroPlayer?id=${player.id}" method="post">
         <h2 class="form-cadastro-heading">Dados Cadastrais Para Jogadores</h2>
         <input type="text" name="txtUsername" class="input-block-level" placeholder="Nome de Login">
         <input type="password" name="txtPassword" class="input-block-level" placeholder="Password">
