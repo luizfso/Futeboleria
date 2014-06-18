@@ -39,7 +39,7 @@ public class ListaServletPlayer extends HttpServlet {
 		String nome = request.getParameter("nome");
 		
 		if(voltar != null){
-			pagina = "menu.html";
+			pagina = "homeClub.jsp";
 		}
 		else{
 			pagina = "listaPlayers.jsp";

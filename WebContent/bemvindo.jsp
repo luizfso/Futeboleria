@@ -86,15 +86,25 @@
       <hr>
 
 	<!-- Button to trigger modal --> 
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script type="text/javascript">
+	    $(window).load(function(){
+	        $('#myModal').modal('show');
+	    });
+	</script>
+	<script src="js/bootstrap.js"></script>
+
+<!-- Parte relacionada ao modal -->		
 <div class="jumbotron">
 
-        <h1>Uma super carreira te aguarda!</h1>
-        <p class="lead">Crie agora mesmo seu usuario e mostre ao mundo seu talento. Faca upload de suas jogadas com videos, fotos e muitos mais que já realizou no esporte. Conte sua historia nos queremos te conhecer</p>
-        <a href="#loginModal" role="button" class="btn btn-large btn-success" data-toggle="modal">Cadastrar Hoje</a>
-      </div>
+      <h1>Uma super carreira te aguarda!</h1>
+      <p class="lead">Crie agora mesmo seu usuario e mostre ao mundo seu talento. Faca upload de suas jogadas com videos, fotos e muitos mais que já realizou no esporte. Conte sua historia nos queremos te conhecer</p>
+      <a href="#loginModal" role="button" class="btn btn-large btn-success" data-toggle="modal">Cadastrar Hoje</a>
+    </div>
      
-    <!-- Modal -->
-    <div id="loginModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <!-- Inicio do Modal -->
+<div id="loginModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     	<div class="modal-header">
     		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
     		<h3 id="myModalLabel">Quem você é ?</h3>
@@ -104,19 +114,11 @@
     							<a class="btn btn-large btn-primary" href="./cadastroClub.jsp">Cadastrar Clube</a></p>
     	</div>
     	<div class="modal-footer">
-    		<button class="btn" data-dismiss="modal" aria-hidden="true">Fechar</button>
-    		<!-- <button class="btn btn-primary">Salvar mudanças</button> -->
-    	</div>
-    </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>  
-
-<script type="text/javascript">
-    $(window).load(function(){
-        $('#myModal').modal('show');
-    });
-</script>
+    	<button class="btn" data-dismiss="modal" aria-hidden="true">Fechar</button>
+    	<!-- <button class="btn btn-primary">Salvar mudanças</button> -->
+	</div>
+</div>
     
-    <script src="js/bootstrap.js"></script>
 
 <div id="loginModalAccess" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     	<div class="modal-header">
@@ -132,22 +134,8 @@
     		<!-- <button class="btn btn-primary">Salvar mudanças</button> -->
     	</div>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>  
-
-<script type="text/javascript">
-    $(window).load(function(){
-        $('#myModal').modal('show');
-    });
-</script>
-    
-    <script src="js/bootstrap.js"></script>
-
- <!-- <div class="jumbotron">
-        <h1>Uma super carreira te aguarda!</h1>
-        <p class="lead">Crie agora mesmo seu usuario e mostre ao mundo seu talento. Faca upload de suas jogadas com videos, fotos e muitos mais que já realizou no esporte. Conte sua historia nos queremos te conhecer</p>
-        <a class="btn btn-large btn-success" href="./cadastroPlayer.jsp">Cadastrar Hoje</a>
-      </div>
- -->
+ 	<!-- Fim do MODAL -->
+ 
       <hr>
 
       <div class="row-fluid marketing">

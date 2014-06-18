@@ -77,6 +77,8 @@
         <input type="text" name="txtCpf" class="input-block-level" placeholder="CPF">
         
         <button class="btn btn-large btn-primary" value="salvar" name="btnSalvar" type="submit">Salvar</button>
+        <button class="btn btn-large btn-warning" value="reset" name="btnReset" type="reset">Limpar</button>
+        <a class="btn btn-large pull-right" href="./bemvindo.jsp">Voltar</a>
       </form>
 
 	<footer>

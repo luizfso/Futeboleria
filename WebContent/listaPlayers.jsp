@@ -139,7 +139,7 @@
 					<td><a href="excluirPlayers?id=${p.id}">Dispensar</a></td></tr>
 			</c:forEach>
 		<tr><td colspan="5">&nbsp</td></tr>
-		<tr><td colspan="5"><a href="homePlayer.jsp">Voltar</a></td></tr>
+		<tr><td colspan="5"><a href="./homeClub.jsp">Voltar</a></td></tr>
 		</thead>
 		</tbody>
 	</table>

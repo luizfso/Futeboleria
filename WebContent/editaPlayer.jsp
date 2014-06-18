@@ -130,11 +130,43 @@
         
         <a href="homePlayer.jsp" class="btn btn-large btn-success"> Tudo Esta Correto</a>
         <button class="btn btn-large btn-primary" value="alterar" name="btnAlterar" type="submit">Alterar</button>
-        <a href="principal.jsp" class="btn btn-large btn-danger" >Excluir</a>
-        <a href="homePlayer.jsp" class="btn btn-large">Voltar</a>
+        <a href="#excluirModal" role="button" class="btn btn-large btn-danger" data-toggle="modal">Excluir</a>
+        <a href="homePlayer.jsp" class="btn btn-large pull-right">Voltar</a>
         
       </form>
-            
+ 
+ <!-- Button to trigger modal --> 
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script type="text/javascript">
+	    $(window).load(function(){
+	        $('#myModal').modal('show');
+	    });
+	</script>
+	<script src="js/bootstrap.js"></script>
+     
+    <!-- Inicio do Modal -->
+<div id="excluirModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    	<div class="modal-header">
+    		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+    		<h3 id="myModalLabel">Tem certeza que deseja excluir ?</h3>
+    	</div>
+    	<div class="modal-body">
+    		<p align="center">	<a class="btn btn-large btn-success" href="excluirPlayers?id=${player.id}">Sim, desejo Excluir meu perfil!</a></p>
+    		<p></p>
+    		<p align="center">	<a class="btn btn-large btn-danger" href="./homePlayer.jsp">Nao, nao sei o que estou fazendo!</a></p>
+    	</div>
+    	<div class="modal-footer">
+    	<button class="btn" data-dismiss="modal" aria-hidden="true">Fechar</button>
+    	<!-- <button class="btn btn-primary">Salvar mudanças</button> -->
+	</div>
+</div>
+    
+ 	<!-- Fim do MODAL -->
+ 
+ 
+ 
+ 
    
 	
             <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>

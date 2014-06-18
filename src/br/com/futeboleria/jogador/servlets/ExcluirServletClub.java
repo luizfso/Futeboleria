@@ -33,16 +33,16 @@ public class ExcluirServletClub extends HttpServlet {
 	
 		String pagina = "";
 		
-		Integer ide = Integer.parseInt(request.getParameter("ide"));
+		Integer id = Integer.parseInt(request.getParameter("id"));
 		
 		ClubDAO dao = new ClubDAO();
 		
-		dao.delete(ide);
+		dao.delete(id);
 		
 		ArrayList<Club> clubs = (ArrayList<Club>) dao.getAll();
 		request.setAttribute("listaC", clubs);
 		
-		pagina = "listaClubs.jsp";
+		pagina = "bemvindo.jsp";
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(pagina);
 		dispatcher.forward(request, response);

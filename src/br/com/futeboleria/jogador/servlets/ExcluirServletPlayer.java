@@ -42,7 +42,7 @@ public class ExcluirServletPlayer extends HttpServlet {
 		ArrayList<Player> players = (ArrayList<Player>) dao.getAll();
 		request.setAttribute("listaP", players);
 		
-		pagina = "listaPlayers.jsp";
+		pagina = "bemvindo.jsp";
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(pagina);
 		dispatcher.forward(request, response);
